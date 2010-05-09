@@ -77,7 +77,16 @@ package be.dinon.tools.twoon.adapters.tweenlite
 					}
 					break;
 			}
+			
+			// delay
 			if (!isNaN(delay)) res.delay = getDelayInSeconds();
+			
+			// update
+			if (updateHandler != null)
+			{
+				res.onUpdate = updateHandler;
+				if (updateParams) res.onUpdateParams = updateParams;
+			}
 			return res;
 		}
 		
