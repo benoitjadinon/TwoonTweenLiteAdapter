@@ -81,12 +81,20 @@ package be.dinon.tools.twoon.adapters.tweenlite
 			// delay
 			if (!isNaN(delay)) res.delay = getDelayInSeconds();
 			
-			// update
+			// onUpdate
 			if (updateHandler != null)
 			{
 				res.onUpdate = updateHandler;
 				if (updateParams) res.onUpdateParams = updateParams;
 			}
+
+			// onComplete
+			if (completeHandler != null)
+			{
+				res.onComplete = completeHandler;
+				if (completeParams) res.onCompleteParams = completeParams;
+			}
+			
 			return res;
 		}
 		
